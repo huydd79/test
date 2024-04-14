@@ -32,10 +32,10 @@ jobs:
           account: DEMO
           host_id: ${{ secrets.CONJUR_USERNAME }}
           api_key: ${{ secrets.CONJUR_API_KEY }}
-          secrets: test/host1/user|TEST_USER;test/host1/pass|TEST_PASS
+          secrets: test/host1/user|TEST_AAA;test/host1/pass|TEST_BBB
 
       # Runs a set of commands using the runners shell
       - name: Check the result
         run: |
           echo Show env detail:
-          env
+          env | grep TEST
