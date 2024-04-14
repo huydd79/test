@@ -34,3 +34,11 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      - name: Import Secrets using CyberArk Conjur Secret Fetcher Action
+        uses: cyberark/conjur-action@v2.0.5
+        with:
+          url: ${{ secrets.CONJUR_URL }}
+          account: conjur
+          host_id: ${{ secrets.CONJUR_USERNAME }}
+          api_key: ${{ secrets.CONJUR_API_KEY }}
+          secrets: /test/host1/user;test/host1/pass
