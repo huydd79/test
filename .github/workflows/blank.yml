@@ -37,4 +37,4 @@ jobs:
           account: DEMO
           host_id: ${{ secrets.CONJUR_USERNAME }}
           api_key: ${{ secrets.CONJUR_API_KEY }}
-          secrets: /test/host1/user;test/host1/pass
+          secrets: test/host1/user;test/host1/pass
