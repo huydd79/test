@@ -25,10 +25,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
@@ -38,7 +34,7 @@ jobs:
         uses: cyberark/conjur-action@v2.0.5
         with:
           url: ${{ secrets.CONJUR_URL }}
-          account: conjur
+          account: DEMO
           host_id: ${{ secrets.CONJUR_USERNAME }}
           api_key: ${{ secrets.CONJUR_API_KEY }}
           secrets: /test/host1/user;test/host1/pass
