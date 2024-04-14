@@ -10,9 +10,9 @@ jobs:
       - name: Fetching secrets from conjur
         uses: cyberark/conjur-action@v2.0.2
         with:
-          url: ${{ secrets.CONJUR_URL }}
+          url: https://conjur.home.huydo.net
           account: DEMO
-          authn_id: ${{ secrets.CONJUR_AUTHN_ID }}
+          authn_id: github
           secrets: test/host1/user|TEST_USER;test/host1/pass|TEST_PASS
       - name: Checking the result
         run: |
