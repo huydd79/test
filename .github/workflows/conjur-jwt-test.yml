@@ -25,5 +25,5 @@ jobs:
       - name: Checking the result
         run: |
           echo Show env detail:
-          cat env | grep TEST
+          env | grep TEST
           echo "$TEST_USER:$TEST_PASS" | base64
