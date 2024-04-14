@@ -1,7 +1,8 @@
-name: CI
+name: Conjur-Authn-JWT
 on: [push]
 jobs:
   test:
+    runs-on: ubuntu-latest
     permissions:
       id-token: 'write'
       contents: 'read'
