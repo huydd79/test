@@ -25,11 +25,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
       - name: Import Secrets using CyberArk Conjur Secret Fetcher Action
         uses: cyberark/conjur-action@v2.0.5
         with:
@@ -37,4 +32,10 @@ jobs:
           account: DEMO
           host_id: ${{ secrets.CONJUR_USERNAME }}
           api_key: ${{ secrets.CONJUR_API_KEY }}
-          secrets: test/host1/user;test/host1/pass
+          secrets: test/host1/user|TEST_USER;test/host1/pass|TEST_PASS
+
+      # Runs a set of commands using the runners shell
+      - name: Check the result
+        run: |
+          echo Show env detail:
+          env
