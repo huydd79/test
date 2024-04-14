@@ -10,6 +10,9 @@ jobs:
       id-token: 'write'
       contents: 'read'
     steps:
+      - name: Testing before main script
+        run: |
+          env
       - name: Fetching secrets from conjur
         uses: cyberark/conjur-action@v2.0.2
         with:
